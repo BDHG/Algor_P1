@@ -3,18 +3,21 @@ package Pack1;
 
 public class Nodo {
     String nid;
-    int indeg;
-    int outdeg;
+    double indeg;
+    double outdeg;
     double x;
     double y;
- 
+    float costo;
+    String a;
+    
     Nodo(int nid){
     	this.nid = String.valueOf(nid);
     	this.indeg = 0;
         this.outdeg = 0;
         this.x = 0;
         this.y = 0;
-        
+        this.costo = 99999999999999f;
+        this.a = "";
     }
     public void sid(){
         this.indeg = this.indeg + 1;
@@ -22,8 +25,14 @@ public class Nodo {
     public void sod(){
         this.outdeg = this.outdeg + 1;
     }
-    public int getDeg(){
-        int deg = this.outdeg + this.indeg;
+    public void addCosto(float fl){
+        this.costo = fl;
+    }
+    public void adda(String a){
+        this.a = a;
+    }
+    public double getDeg(){
+        double deg = this.outdeg;
         return deg;
     }
     public double getDis(Nodo n2){
